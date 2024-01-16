@@ -2,13 +2,14 @@
     <div>
         <top-bar/>
         <div class="hero">
-            <side-navbar class="side" />
+            <side-navbar  class="side" />
 
             <div class="content">
                 <main>
-                    <slot></slot>
+                    <slot @showIt="fetchData"></slot>
 
                 </main>
+                <modal v-show="showModal" />
 
             </div>
 
@@ -20,8 +21,20 @@
 
 import SideNavbar from '../Components/SideNavbar.vue'
 import TopBar from '../Components/TopBar.vue'
+import Modal from '../Components/Modal.vue';
+
 export default {
-    components: { SideNavbar, TopBar },
+    data() {
+    return {
+      showModal: false
+    }
+  },
+    components: { SideNavbar, TopBar, Modal },
+    methods: {
+        fetchData(data) {
+            console.log(data);
+        }
+    }
 }
 </script>
 

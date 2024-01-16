@@ -1,15 +1,18 @@
 <template>
   <aside class="side-bar">
     <ul>
-      <li class="active"> <a href="/recordings">
+      <li :class="{'active': $page.url === '/recordings'}"> <Link href="/recordings">
         <span>
           <img width="26" height="26" src="./../../assets/icons/video-player.svg" alt="Video Player">
         </span>
         My Recordings
         
-        </a>
-      </li>
-      <li><a href="/">
+      </Link>
+    </li>
+    <li><a href="/">
+        <span>
+          <!-- <v-icon name="bi-share-fill"></v-icon> -->
+        </span>
         Requested
       </a></li>
     </ul>
@@ -17,9 +20,12 @@
 </template>
 
 <script>
-export default {
+import { Link } from '@inertiajs/inertia-vue3';
+// import OhVueIcon from "oh-vue-icons";
 
-}
+export default {
+    components: { Link }
+ }
 </script>
 
 <style lang="less">

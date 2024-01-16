@@ -20,16 +20,36 @@
             </div>
 
             <div class="actions">
-                <button class="btn">New Request</button>
+                <button @click="showIt" class="btn">New Request</button>
                 <button class="btn">Start Recording</button>
             </div>
         </div>
     </div>
+    <modal v-show="showModal" @closeModal="(n) => showModal = n" />
+
   </div>
 </template>
 
 <script>
+import Modal from '../Components/Modal.vue';
 export default {
+
+    components: { Modal },
+
+    data() {
+        return {
+            showModal: false
+        }
+    },
+
+    methods: {
+        showIt() {
+            this.showModal = true
+        },
+        closeIt() {
+            this.showModal = false
+        }
+    }
 
 }
 </script>
@@ -83,6 +103,7 @@ export default {
                 appearance: none;
                 border: none;
                 background: none;
+                cursor: pointer;
             }
             
             .filters {

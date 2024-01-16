@@ -3,7 +3,7 @@
     <div class="modal">
         <div class="modal-header">
             <span>New Recording</span>
-            <span>&times;</span>
+            <span @click="closeModal">&times;</span>
         </div>
         <div class="divider"></div>
         <div class="modal-body">
@@ -47,6 +47,9 @@ export default {
     methods: {
         books() {
             console.log('data');
+        },
+        closeModal() {
+            this.$emit("closeModal", false)
         }
     }
 }
@@ -88,6 +91,7 @@ export default {
                 padding: 4px 9px;
                 font-size: 15px;
                 font-weight: lighter;
+                cursor: pointer;
             }
         }
         .divider {

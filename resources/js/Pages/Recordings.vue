@@ -54,7 +54,7 @@
       </table>
 
     </div>
-    <modal />
+
   </layout>
 </template>
 
@@ -62,13 +62,12 @@
 import TabInfo from '../Components/TabInfo.vue';
 import Layout from '../Layout/layout.vue'
 import moment from 'moment'
-import Modal from '../Components/Modal.vue';
 
 export default {
   props: {
     recordings: Array
   },
-  components: { Layout, TabInfo, Modal },
+  components: { Layout, TabInfo },
   mounted() {
     console.log(this.$page);
     console.log(this.recordings);

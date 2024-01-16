@@ -2,11 +2,10 @@
   <div class="top">
     <div class="top-head">
         <div class="logo">
-            //
+            <span class="icon"></span>
         </div>
         <div class="brand">
-            Bingo
-            <!-- Adilo -->
+            Adilo
         </div>
     </div>
     <div class="top-list">
@@ -18,7 +17,7 @@
 
                 <!-- </div> -->
                 <ul class="dropdown-list">
-                    <li>Snapbyte Recorder</li>
+                    <li :class="{'active': $page.url === '/'}"> <Link href="/">Snapbyte Recorder</Link> </li>
                     <span />
                     <li>AudioBounce</li>
                     <span />
@@ -37,7 +36,7 @@
             <div class="divider"></div>
             <div class="profile">
                 <span class="profile-img">
-                    <!-- <img src="" alt=""> -->
+                    <img src="/images/calendar.png" alt="profile">
                 </span>
                 <span class="profile-info">
                     <span class="profile-name">Cody Fisher</span>
@@ -50,8 +49,10 @@
 </template>
 
 <script>
-export default {
+import { Link } from '@inertiajs/inertia-vue3';
 
+export default {
+    components: { Link }
 }
 </script>
 
@@ -72,10 +73,20 @@ export default {
         padding: 0 10px;
     
         .logo {
-            background: @blue-button;
-            border-radius: 5px;
+            background: #FBBD71 0% 0% no-repeat padding-box;
+            border-radius: 10px;
             height: 28px;
             width: 28px;
+            display: grid;
+            place-items: center;
+
+            .icon {
+                width: 50%;
+                height: 50%;
+                background-color: #fff;
+                border-radius: 50%;
+            }
+
         }
     
         .brand {
@@ -139,8 +150,14 @@ export default {
                             padding: 10px;
                             cursor: pointer;
         
-                            &:hover {
+                            &.active, &:hover {
                                 color: @blue-button;
+                            }
+
+                            a {
+                                text-decoration: none;
+                                color: @medium-link;
+
                             }
                         }
                     }
@@ -196,6 +213,13 @@ export default {
                 width: 28px;
                 height: 28px;
                 border-radius: 5px;
+                object-fit: contain;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
 
             }
 

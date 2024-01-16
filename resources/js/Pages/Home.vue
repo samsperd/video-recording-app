@@ -15,20 +15,19 @@
       </div>
 
     </div>
-    <!-- <modal /> -->
   </layout>
 </template>
 
 <script>
 import TabInfo from '../Components/TabInfo.vue';
 import Layout from '../Layout/layout.vue'
-import Modal from '../Components/Modal.vue';
 
 export default {
   props: {
     recordings: Array
   },
-  components: { Layout, TabInfo, Modal },
+
+  components: { Layout, TabInfo },
   mounted() {
     console.log(this.$page);
     console.log(this.recordings);
@@ -51,7 +50,7 @@ export default {
 .say-hello {
   width: 100%;
   height: 400px;
-  border: 1px dashed #000;
+  border: 1px dashed #A3BAC6;
   border-radius: 12px;
   position: relative;
 
@@ -92,15 +91,16 @@ export default {
       appearance: none;
       border: none;
       cursor: pointer;
+      display: flex;
     }
 
     .btn:nth-child(1) {
       color: white;
-      background: @blue-button;
+      background: @red-button;
     }
     .btn:nth-child(2) {
       color: white;
-      background: @red-button;
+      background: @blue-button;
     }
   }
 }
