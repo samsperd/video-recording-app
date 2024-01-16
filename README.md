@@ -36,4 +36,4 @@ http://localhost:8000
 
 See [documentation](https://laravel.com/docs)
 
-# vue-click-timer-game
+# video-recording-app
