@@ -53,23 +53,55 @@ export default {
   height: 400px;
   border: 1px dashed #000;
   border-radius: 12px;
+  position: relative;
 
   .image-box {
-    border: 1px solid #000;
-    height: 50%;
+    height: 60%;
   }
 }
 
 .shortlinks {
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 40%;
+  gap: 10px;
+  font-size: 14px;
+
+  h5 {
+    font-size: 15px;
+  }
+
+  p {
+    color: @half-mid-link;
+  }
 
   .btn-group {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
     gap: 10px;
+    padding: 20px 0;
+
+    .btn {
+      border-radius: 13px;
+      padding: 5px 17px;
+      font-size: 11px;
+      outline: none;
+      appearance: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:nth-child(1) {
+      color: white;
+      background: @blue-button;
+    }
+    .btn:nth-child(2) {
+      color: white;
+      background: @red-button;
+    }
   }
 }
 </style>

@@ -13,11 +13,8 @@ class RecordingsController extends Controller
      */
     public function index()
     {
-        $recordings = Recordings::all();
 
-        return Inertia::render('Home', [
-            'recordings' => $recordings
-        ]);
+        return Inertia::render('Home');
     }
 
     /**
@@ -25,7 +22,11 @@ class RecordingsController extends Controller
      */
     public function create()
     {
-        //
+        $recordings = Recordings::all();
+
+        return Inertia::render('Recordings', [
+            'recordings' => $recordings
+        ]);
     }
 
     /**

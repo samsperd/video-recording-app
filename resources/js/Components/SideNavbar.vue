@@ -1,12 +1,17 @@
 <template>
   <aside class="side-bar">
     <ul>
-      <li class="active">
+      <li class="active"> <a href="/recordings">
         <span>
           <img width="26" height="26" src="./../../assets/icons/video-player.svg" alt="Video Player">
         </span>
-        My Recordings</li>
-      <li>Requested</li>
+        My Recordings
+        
+        </a>
+      </li>
+      <li><a href="/">
+        Requested
+      </a></li>
     </ul>
   </aside>
 </template>
@@ -34,16 +39,20 @@ export default {
       gap: 20px;
 
       li {
-        display: flex;
         width: 100%;
-        justify-content: center;
-        align-items: center;
         padding: 7px;
-        gap: 8px;
         font-size: 14px;
         border-radius: 7px;
         cursor: pointer;
-        color: darken(@gray-link, 20%);
+        
+        a {
+          color: darken(@gray-link, 20%);
+          gap: 8px;
+          align-items: center;
+          justify-content: center;
+          display: flex;
+          text-decoration: none;
+        }
 
         span {
           display: grid;

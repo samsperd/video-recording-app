@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [RecordingsController::class, 'index']);
+Route::get('/recordings', [RecordingsController::class, 'create']);
